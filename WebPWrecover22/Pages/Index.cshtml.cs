@@ -11,14 +11,14 @@ namespace WebPWrecover.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly CustomEmailConformationTokenProvider<IdentityUser> _customEmailConformationTokenProvider;
+        private readonly CustomEmailConfirmationTokenProvider<IdentityUser> _customEmailConfirmationTokenProvider;
         private readonly DataProtectorTokenProvider<IdentityUser> _dataProtectorTokenProvider;
         private readonly UserManager<IdentityUser> _userManager;
 
-        public IndexModel(CustomEmailConformationTokenProvider<IdentityUser> customEmailConformationTokenProvider,
+        public IndexModel(CustomEmailConfirmationTokenProvider<IdentityUser> customEmailConfirmationTokenProvider,
     DataProtectorTokenProvider<IdentityUser> dataProtectorTokenProvider, UserManager<IdentityUser> userManager)
         {
-            _customEmailConformationTokenProvider = customEmailConformationTokenProvider;
+            _customEmailConfirmationTokenProvider = customEmailConfirmationTokenProvider;
             _dataProtectorTokenProvider = dataProtectorTokenProvider;
             _userManager = userManager;
         }

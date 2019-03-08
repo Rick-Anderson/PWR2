@@ -34,7 +34,7 @@ namespace WebPWrecover
             {
                 config.SignIn.RequireConfirmedEmail = true;
                 config.Tokens.ProviderMap.Add("CustomEmailConfirmation",
-                    new TokenProviderDescriptor(typeof(CustomEmailConformationTokenProvider<IdentityUser>)));
+                    new TokenProviderDescriptor(typeof(CustomEmailConfirmationTokenProvider<IdentityUser>)));
                 config.Tokens.EmailConfirmationTokenProvider = "CustomEmailConfirmation";
                 config.Tokens.ProviderMap.Add("CustomPasswordReset",
                     new TokenProviderDescriptor(typeof(CustomPasswordResetTokenProvider<IdentityUser>)));
@@ -43,7 +43,7 @@ namespace WebPWrecover
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            services.AddTransient<CustomEmailConformationTokenProvider<IdentityUser>>();
+            services.AddTransient<CustomEmailConfirmationTokenProvider<IdentityUser>>();
             services.AddTransient<CustomPasswordResetTokenProvider<IdentityUser>>();
 
             #region snippet1

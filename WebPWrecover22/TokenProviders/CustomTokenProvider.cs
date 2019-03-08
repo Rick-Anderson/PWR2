@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace WebPWrecover.TokenProviders
 {
-    public class CustomEmailConformationTokenProvider<TUser> : DataProtectorTokenProvider<TUser> where TUser : class
+    public class CustomEmailConfirmationTokenProvider<TUser> : DataProtectorTokenProvider<TUser> where TUser : class
     {
-        public CustomEmailConformationTokenProvider(IDataProtectionProvider dataProtectionProvider,
+        public CustomEmailConfirmationTokenProvider(IDataProtectionProvider dataProtectionProvider,
             IOptions<EmailConfirmationTokenProviderOptions> options) : base(dataProtectionProvider, options)
         {
 
@@ -21,7 +21,7 @@ namespace WebPWrecover.TokenProviders
         public EmailConfirmationTokenProviderOptions()
         {
             Name = "EmailDataProtectorTokenProvider";
-            TokenLifespan = TimeSpan.FromSeconds(60);
+            TokenLifespan = TimeSpan.FromSeconds(30);
         }
     }
 
@@ -38,7 +38,7 @@ namespace WebPWrecover.TokenProviders
         public PasswordResetTokenProviderOptions()
         {
             Name = "PasswordResetDataProtectorTokenProvider";
-            TokenLifespan = TimeSpan.FromSeconds(5);
+            TokenLifespan = TimeSpan.FromSeconds(45);
         }
     }
 }
